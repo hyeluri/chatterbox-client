@@ -84,7 +84,7 @@
           success: function (data) {
           // console.log(data);
             app.parseMsg(data);
-            getRooms(data);
+            app.getRooms(data);
             //console.log('chatterbox: Message received');
           },
           error: function (data) {
@@ -126,10 +126,10 @@
         else {
           app.msg.username = app.username;
           app.msg.roomname = app.selectedRoom;
-          app.postMsg(app.msg);
+          app.send(app.msg);
         }
       },
-/*
+
       userphotoBTfn: function() {
         app.msg.userphoto = $("#userphoto").val() || "";
         if(app.msg.userphoto === "" || app.msg.userphoto === undefined) {
@@ -157,10 +157,10 @@
           app.msg.text = $("#toSend").val() || "";
           app.msg.username = app.username;
           app.msg.roomname = newRoom;
-          app.postMsg(app.msg);
+          app.send(app.msg);
         }
       },
-*/
+
   };
 
   $(function(){
